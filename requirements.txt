@@ -1,5 +1,0 @@
-transformers
-torch
-sentencepiece
-accelerate
-gradio

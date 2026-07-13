@@ -1,0 +1,26 @@
+{
+  "day": 1,
+  "student_name": " Hardik Sahni",
+  "github": "hardik951",
+
+  "lab2_team": "Team Dhurandhar",
+  "lab2_model_used": "Qwen3-4B",
+  "lab2_gradio_url": "https://1d11cad78485a56249.gradio.live/",
+
+  "lab": "model_face_off",
+  "p1_winner": "claude",
+  "p1_observation": "Professionalism and clealiness of the response",
+  "p2_winner": "claude",
+  "p2_observation": "The response was more detailed and structured, providing a clear step-by-step guide.",
+  "p3_winner": "claude",
+  "p3_observation": "Claude's response was more comprehensive, covering various aspects of the topic and providing additional insights.",
+  "hallucination_found": true,
+  "hallucination_detail": "chatgpt | Mixes up multiple situations | Misses on the actual context of the question and provides a generic response that doesn't address the specific scenario.",
+  "overall_winner": "claude",
+  "biggest_surprise": " Claude's ability to provide a more structured and detailed response, which was unexpected given the context of the questions.",
+  "stretch_done": false,
+  "stretch_prompt": "-",
+  "stretch_observation": "-",
+  "achievement": "diamond ",
+  "submitted_at": "2026-07-13T15:42:00"
+}

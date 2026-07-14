@@ -1,0 +1,19 @@
+{
+  "day": 2,
+  "student_name": "Hardik Sahni",
+  "github": "hardik951",
+  "lab1_scenario": "C",
+  "lab1_prompt": "You are an HR chatbot for a lT company.  \nDraft a reply answering a new campus recruit's question about when and how they will receive their company laptop  Context: The user is a newly hired campus recruit who is going through the onboarding process. Laptop provisioning timelines vary by location and team, and the chatbot should guide them without making promises about exact date  Constraints: Keep the response between 60–80 words. Mention that the timeline may vary, suggest checking onboarding emails if needed, and avoid guaranteeing a specific delivery date or using overly casual language \n Tone: Professional, friendly, helpful  \nOutput format: single paragraph",
+  "lab1_output_met_constraints": true,
+  "lab1_extra_scenarios_done": 2,
+  "lab2_problem": "Galaxy Buds distribution centre — shipment/hold/restock",
+  "lab2_naive_output_summary": "The AI subtracted the 850-unit shipment from 4,200 (→3,350), removed a 6% quality hold of 201 units (→3,149), then added the 1,150-unit restock to arrive at a final answer of 4,299 units available for sale",
+  "lab2_cot_prompt": "Samsung's SRM-area distribution centre begins the day with an inventory of 4,200 Galaxy Buds units. During the morning, a shipment of 850 units goes out, divided evenly among 3 retail partners. Once this shipment leaves, the centre places a quality hold on 6% of whatever stock remains, pending inspection. Later in the afternoon, a restock of 1,150 new units arrives — these new units are exempt from the hold.\nWork through this one step at a time: first compute the units remaining after the shipment, then calculate the units placed on hold, then apply the restock. Show each step clearly, then state the final number of units available for sale (i.e., not on hold) by end of day.",
+  "lab2_cot_output_summary": "The AI would work through the problem in four steps  subtracting the 850-unit shipment from 4,200 (→3,350), calculating and removing the 6% quality hold (→3,149), then adding the 1,150-unit restock , to reach a final answer of 4,299 units available for sale.",
+  "better_approach": "cot",
+  "stretch_done": true,
+  "stretch_react_prompt": "Role: You are an inventory operations assistant for Samsung's supply chain.\n\nTask: Solve the following inventory problem by iteratively identifying the next calculation, performing it, and recording the intermediate result before proceeding to the next step. Base every step only on the information provided.\n\nProblem: A Samsung SRM-area distribution centre starts the day with 4,200 Galaxy Buds units. During the morning, 850 units are shipped out, split equally across 3 retail partners. After the shipment, 6% of the remaining inventory is placed on quality hold and cannot be sold. In the afternoon, 1,150 new units arrive, and these newly arrived units are not subject to the quality hold.\n\nInstructions:\n\nIdentify the next calculation needed.\nPerform the calculation and show the result.\nRepeat until all required calculations are complete.\nUse the intermediate results from previous steps in later calculations.\nEnd with the total number of units available for sale.\n\nOutput Format:\nStep 1:\nAction:\nResult:\n\nStep 2:\nAction:\nResult:\n\nStep 3:\nAction:\nResult:\n\nFinal Answer:\nTotal units available for sale = ____ units",
+  "tasks_completed": 6,
+  "tasks_total": 6,
+  "submitted_at": "2026-07-14T10:03:20.213Z"
+}

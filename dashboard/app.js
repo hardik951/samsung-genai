@@ -19,11 +19,13 @@ function medalCell(achievement) {
   return `<td class="day-cell" title="${m.label}"><span class="medal" style="color:${m.color}">${m.icon}</span></td>`;
 }
 
-function rankBadge(rank) {
-  if (rank === 1) return '<span class="rank-badge gold-rank">🥇 1</span>';
-  if (rank === 2) return '<span class="rank-badge silver-rank">🥈 2</span>';
-  if (rank === 3) return '<span class="rank-badge bronze-rank">🥉 3</span>';
-  return `<span class="rank-num">${rank}</span>`;
+// Top-3 medal — keyed on true score rank, shown next to the name, independent
+// of where the row actually sits in the (now alphabetical) table order.
+function topMedal(rank) {
+  if (rank === 1) return { icon: '🥇', cls: 'gold-rank' };
+  if (rank === 2) return { icon: '🥈', cls: 'silver-rank' };
+  if (rank === 3) return { icon: '🥉', cls: 'bronze-rank' };
+  return null;
 }
 
 function render(data) {
@@ -56,16 +58,23 @@ function render(data) {
     dayHeaders += `<th class="day-header">Day ${d}</th>`;
   }
 
-  // Build student rows
+  // Build student rows — table order is alphabetical, so "#" is just the row
+  // position in that list. Actual score standing (top-3 medal) is shown next
+  // to the name instead, since it no longer matches row position.
   let rows = '';
-  students.forEach(s => {
+  students.forEach((s, i) => {
+    const position = i + 1;
     const dayCells = s.days.map(d => medalCell(d.achievement)).join('');
     const hasAny = s.daysSubmitted > 0;
+    const medal = topMedal(s.rank);
+    const medalHTML = medal
+      ? ` <span class="rank-badge ${medal.cls}" title="Rank #${s.rank} overall by score">${medal.icon} #${s.rank}</span>`
+      : '';
     rows += `
       <tr class="${hasAny ? 'active-row' : 'pending-row'}">
-        <td class="rank-cell">${rankBadge(s.rank)}</td>
+        <td class="rank-cell"><span class="rank-num">${position}</span></td>
         <td class="name-cell">
-          <div class="student-name">${escapeHTML(s.name)}</div>
+          <div class="student-name">${escapeHTML(s.name)}${medalHTML}</div>
           <div class="student-github">@${escapeHTML(s.github)}</div>
         </td>
         ${dayCells}

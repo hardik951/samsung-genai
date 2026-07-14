@@ -110,6 +110,7 @@ header {
 .gold-rank   { background: rgba(255,215,0,.15); color: var(--gold); }
 .silver-rank { background: rgba(192,200,216,.12); color: var(--silver); }
 .bronze-rank { background: rgba(205,127,50,.12); color: #CD7F32; }
+.student-name .rank-badge { margin-left: 6px; vertical-align: middle; }
 
 .name-cell { padding: 14px 16px; }
 .student-name {

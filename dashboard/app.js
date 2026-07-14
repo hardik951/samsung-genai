@@ -28,6 +28,34 @@ function topMedal(rank) {
   return null;
 }
 
+// Per-day breakdown — "Total Students" up top stays a single overall number,
+// but submitted-count and top-score are date-wise (per day), not summed across days.
+function renderDayStats(students, totalDays, totalStudents) {
+  let cards = '';
+  for (let d = 1; d <= totalDays; d++) {
+    const dayEntries = students
+      .map(s => (s.days || []).find(x => x.day === d))
+      .filter(Boolean);
+    const submittedCount = dayEntries.filter(x => x.achievement !== null).length;
+    const scores = dayEntries.map(x => x.score || 0);
+    const topScore = scores.length ? Math.max(...scores) : 0;
+
+    cards += `
+      <div class="day-stat">
+        <div class="day-stat-label">Day ${d}</div>
+        <div class="day-stat-row">
+          <span class="day-stat-num">${submittedCount}/${totalStudents}</span>
+          <span class="day-stat-sub">submitted</span>
+        </div>
+        <div class="day-stat-row">
+          <span class="day-stat-num gold-num">${topScore > 0 ? (topScore % 1 === 0 ? topScore.toFixed(0) : topScore.toFixed(1)) : '—'}</span>
+          <span class="day-stat-sub">top score</span>
+        </div>
+      </div>`;
+  }
+  document.getElementById('day-stats-bar').innerHTML = cards;
+}
+
 function render(data) {
   if (data.error === 'roster_empty') {
     document.getElementById('content').innerHTML =
@@ -39,12 +67,10 @@ function render(data) {
   const students = data.students || [];
 
   document.getElementById('stat-total').textContent = data.total_students ?? '–';
-  document.getElementById('stat-submitted').textContent =
-    students.filter(s => s.daysSubmitted > 0).length;
-  document.getElementById('stat-score').textContent =
-    students.length > 0 ? Math.max(...students.map(s => s.totalScore)).toFixed(0) : '–';
   document.getElementById('updated').textContent =
     data.generated_at ? `Updated ${new Date(data.generated_at).toLocaleTimeString()}` : '';
+
+  renderDayStats(students, totalDays, data.total_students ?? students.length);
 
   if (students.length === 0) {
     document.getElementById('content').innerHTML =

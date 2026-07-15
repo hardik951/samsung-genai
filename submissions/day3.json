@@ -9,12 +9,12 @@
   "ir_battle_blocked": 8,
   "ir_battle_total": 8,
   "rag_scenario": "B",
-  "rag_no_rag_summary": "it gave a decent sounding guess based on general Indian labor law stuff (like the Maternity Benefit Act), but had zero clue about Samsung's actual internal numbers or that they even use \"primary/secondary caregiver\" language instead of just maternity/paternity. Sounded fairly sure of itself but was basically making an educated guess",
-  "rag_grounded_summary": "With the doc pasted in, it nailed it , 26 weeks fully paid for primary caregivers, 2 weeks fully paid for secondary caregivers, no gender distinction, and a 12-month window to use it. No hedging, just pulled straight from the text",
+  "rag_no_rag_summary": "It gave a decent sounding guess based on general Indian labor law stuff (like the Maternity Benefit Act), but had zero clue about Samsung's actual internal numbers or that they even use \"primary/secondary caregiver\" language instead of just maternity/paternity. Sounded fairly sure of itself but was basically making an educated guess",
+  "rag_grounded_summary": "With the doc pasted in, it nailed it! , 26 weeks fully paid for primary caregivers, 2 weeks fully paid for secondary caregivers, no gender distinction, and a 12-month window to use it. No hedging, just pulled straight from the text",
   "rag_judgement": "fixed_wrong",
   "stretch_done": true,
-  "stretch_notes": "Edited the doc to say secondary caregivers get 12 weeks instead of 2 (way more than the usual paternity norm), told it to use ONLY the doc. It just went with 12 weeks, no pushback, no \"hmm that seems high.\" Doc won over whatever it thought it knew. Cool that grounding works, but also means it'll trust garbage just as easily as facts.",
+  "stretch_notes": "Edited the doc to say secondary caregivers get 12 weeks instead of 2 (way more than the usual paternity norm), told it to use ONLY the doc. It just went with 12 weeks, no pushback, no \"hmm that seems high,\" Doc won over whatever it thought it knew. Cool that grounding works, but also means it'll trust garbage just as easily as facts.",
   "tasks_completed": 6,
   "tasks_total": 6,
   "submitted_at": "2026-07-15T06:24:13.701Z"
-}
+}   

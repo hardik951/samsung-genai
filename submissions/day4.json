@@ -1,0 +1,52 @@
+{
+  "day": 4,
+  "student_name": "Hardik Sahni",
+  "github": "hardik951",
+  "incidents": [
+    {
+      "id": "A",
+      "failure_type": "Hallucination",
+      "principle": "Reliability",
+      "justification": "The chatbot confidently fabricated a non existent discount policy, producing false information that users relied on, making it primarily a failure of reliability caused by hallucination"
+    },
+    {
+      "id": "B",
+      "failure_type": "Privacy Violation",
+      "principle": "Privacy",
+      "justification": "The system collected and stored sensitive employee and client information without users' knowledge or consent, violating privacy"
+    },
+    {
+      "id": "C",
+      "failure_type": "Deepfake/Misinformation",
+      "principle": "Transparency",
+      "justification": "The AI-generated video falsely appeared authentic, misleading the public because its artificial origin was not transparent"
+    },
+    {
+      "id": "D",
+      "failure_type": "Bias/Discrimination",
+      "principle": "Fairness",
+      "justification": "The model indirectly discriminated against applicants using a proxy for gender, leading to unfair hiring decisions"
+    },
+    {
+      "id": "E",
+      "failure_type": "Lack of Human Oversight",
+      "principle": "Human Oversight",
+      "justification": "Harmful automated decisions continued unchecked because no human monitored or reviewed the system's behavior"
+    },
+    {
+      "id": "F",
+      "failure_type": "Bias/Discrimination",
+      "principle": "Security",
+      "justification": "AI-generated voice impersonation was used to deceive employees and compromise financial security"
+    }
+  ],
+  "justifications_written": 6,
+  "stretch_done": true,
+  "stretch_company": "Clearview AI",
+  "stretch_failure_type": "Privacy Violation",
+  "stretch_principle": "Privacy",
+  "stretch_notes": "Clearview AI scraped billions of publicly available photos from social media and websites without users' consent to build a facial recognition database, leading to lawsuits, regulatory fines, and privacy concerns over the unauthorized collection and use of personal biometric data",
+  "tasks_completed": 6,
+  "tasks_total": 6,
+  "submitted_at": "2026-07-16T06:20:44.991Z"
+}
